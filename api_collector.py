@@ -14,7 +14,7 @@ def api_get(category):
     else: 
         # If not, return empty result, notify by print
         print(f"\nCould not access the API to get {category}...\n")
-        return {"results": [], "info": {}}
+        return []
 
 if __name__ == "__main__":
     pass
