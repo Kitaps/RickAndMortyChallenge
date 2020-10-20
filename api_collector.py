@@ -1,6 +1,5 @@
 # Module to get the API data and preprocess it
 import requests
-import json
 
 def api_get(category):
     # Recives a category string: "location"; "character"; "episode"
