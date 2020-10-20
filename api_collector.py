@@ -17,6 +17,7 @@ def api_get(category):
 
 if __name__ == "__main__":
     pass
+    import json
     # print(json.dumps(api_get("location"), indent=4, sort_keys=True))
     # print(json.dumps(api_get("character"), indent=4, sort_keys=True))
     # print(json.dumps(api_get("episode"), indent=4, sort_keys=True))
