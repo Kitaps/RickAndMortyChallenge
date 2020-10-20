@@ -4,7 +4,7 @@ def letter_appearance(letter, json_data):
     # Returns the counted number as int.
     
     # Therefore, for each entry in the data, we count the letter ocurrences in the entrys name. 
-    name_counter_iterator = map(lambda entry: entry["name"].count(letter), json_data)
+    name_counter_iterator = map(lambda entry: entry["name"].count(letter), json_data) # Must be case INsensitive lol
     # Later we return the appearence number.
     return sum(name_counter_iterator)
 
