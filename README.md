@@ -10,5 +10,6 @@ Modulation will also be reduced, since for the scope of the project it is not ne
 * Use itertools or cython libraries. 
 
 ### How to
-Written on `Python 3.6`
-just `python3 main.py` into your console and let it run ;)
+Written on `Python 3.6`.
+
+Just `python3 main.py` into your console and let it run ;)
