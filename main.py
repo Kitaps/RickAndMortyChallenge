@@ -7,6 +7,9 @@ from char_finder import chars_from, origins_from
 
 # Part 1
 
+# Time GET
+start_get = time()
+
 # We get the data from the API
 # Print loadings to see progress
 print("Getting data locations...")
@@ -16,6 +19,11 @@ characters = api_get("character")
 print("Getting data episodes...\n")
 episodes = api_get("episode")
 print("Done!\n")
+
+end_get = time()
+
+# Time count
+start_count = time()
 
 # We count the letter appearances
 locations_count = letter_appearance("l", locations)
@@ -27,7 +35,12 @@ print(f"The letter \"l\" appears {locations_count} in location names.")
 print(f"The letter \"c\" appears {characters_count} in character names.")
 print(f"The letter \"e\" appears {episodes_count} in episode names.\n")
 
+end_count = time()
+
 # Part 2
+
+# Time episode locations
+start_ep_locs = time()
 
 # Make numpy array from characters list to make faster operations
 characters_array = np.array(characters)
@@ -50,4 +63,10 @@ for locs in episodes_locations_tuples:
     print()
     episode_id += 1
 
+end_ep_locs = time()
 
+print(f"\n Runtime:")
+print(f"   Get:    {end_get - start_get}")
+print(f"   Count:  {end_count - start_count}")
+print(f"   EpLocs: {end_ep_locs - start_ep_locs}")
+print(f"      Total: {end_ep_locs - start_get}")
