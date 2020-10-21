@@ -43,30 +43,8 @@ def api_get(category):
 
     # Once all data has been get, we join the pages data into one
     results = np.concatenate(page_results)
-
     return results
 
-    
-
-    # # Iterate untill all pages have been requested
-    # while get_data.status_code == 200: 
-    #     # If request was successfull, parse as json
-    #     get_data = get_data.json()
-    #     # Save result and next page
-    #     results += get_data["results"]
-    #     next_page = get_data["info"]["next"]
-
-    #     if next_page:
-    #         # We get the next page from the request
-    #         get_data = requests.get(next_page)
-    #     # If all pages have been visited (next == null) return 
-    #     else: 
-    #         return results
-    
-    # else: 
-    #     # If not, return empty result, notify by print
-    #     print(f"\nCould not access the API to get {category}...\n")
-    #     return []
 
 def get_page(link, index, destiny):
     # Recives the category link, the page_results index of where to save the data
@@ -80,12 +58,9 @@ def get_page(link, index, destiny):
 
     page_data = requests.get(page_link).json()
 
-    # print(f"Dentro de results {index} hay: {destiny[index]}")
-
     # We save the get data in the corresponding memory space
     destiny[index] = page_data["results"]
 
-    # print(f"Dentro de results {index} hay: {destiny[index]}")
 
 if __name__ == "__main__":
     pass
